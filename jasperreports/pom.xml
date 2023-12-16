@@ -17,6 +17,7 @@
   <url>https://struts.apache.org/getting-started/jasper-reports-tutorial</url>
   <properties>
     <jasperreports.version>6.21.0</jasperreports.version>
+    <jetty.version>10.0.18</jetty.version>
   </properties>
 
   <dependencies>
@@ -67,19 +68,27 @@
 
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-maven-plugin</artifactId>
-        <version>${jetty-plugin.version}</version>
-        <configuration>
-          <webApp>
-            <contextPath>/${project.artifactId}</contextPath>
-          </webApp>
-          <stopKey>CTRL+C</stopKey>
-          <stopPort>8999</stopPort>
-          <scanIntervalSeconds>10</scanIntervalSeconds>
-        </configuration>
-      </plugin>
+        <plugin>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-maven-plugin</artifactId>
+            <version>${jetty.version}</version>
+            <configuration>
+                <webApp>
+                    <contextPath>/${project.artifactId}</contextPath>
+                </webApp>
+                <stopKey>CTRL+C</stopKey>
+                <stopPort>8999</stopPort>
+                <scan>10</scan>
+                <scanTargetPatterns>
+                    <scanTargetPattern>
+                      <directory>src/main/webapp/WEB-INF</directory>
+                      <includes>
+                        <include>web.xml</include>
+                      </includes>
+                    </scanTargetPattern>
+                </scanTargetPatterns>
+            </configuration>
+        </plugin>
     </plugins>
-  </build>
+</build>
 </project>

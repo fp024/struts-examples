@@ -21,20 +21,20 @@
 <#if (actionMessages?? && actionMessages?size > 0 && !parameters.isEmptyList)>
 	<ul<#rt/>
 <#if parameters.id?if_exists != "">
- id="${parameters.id?html}"<#rt/>
+ id="${parameters.id?esc}"<#rt/>
 </#if>
 <#if parameters.cssClass??>
- class="${parameters.cssClass?html}"<#rt/>
+ class="${parameters.cssClass?esc}"<#rt/>
 <#else>
  class="actionMessage"<#rt/>
 </#if>
 <#if parameters.cssStyle??>
- style="${parameters.cssStyle?html}"<#rt/>
+ style="${parameters.cssStyle?esc}"<#rt/>
 </#if>
 >
 		<#list actionMessages as message>
             <#if message?if_exists != "">
-                <li><span><#if parameters.escape>${message!?html}<#else>${message!}</#if></span></li>
+                <li><span><#if parameters.escape>${message!?esc}<#else>${message!}</#if></span></li>
             </#if>
 		</#list>
 	</ul>

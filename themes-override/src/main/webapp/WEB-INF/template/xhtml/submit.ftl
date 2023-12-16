@@ -21,7 +21,7 @@
 <tr>
     <td colspan="2"><div <#rt/>
 <#if parameters.align??>
-    align="${parameters.align?html}"<#t/>
+    align="${parameters.align?esc}"<#t/>
 </#if>
 ><#t/>
 <#include "/${parameters.templateDir}/simple/submit.ftl" />

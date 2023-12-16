@@ -27,7 +27,7 @@
 </#if>
 >
     <td align="left" valign="top" colspan="2"><#rt/>
-        <span class="errorMessage">${error?html}</span><#t/>
+        <span class="errorMessage">${error?esc}</span><#t/>
     </td><#lt/>
 </tr>
 </#list>
@@ -42,7 +42,7 @@
     <td colspan="2">
 <#if parameters.label??> <label<#t/>
 <#if parameters.id??>
- for="${parameters.id?html}"<#rt/>
+ for="${parameters.id?esc}"<#rt/>
 </#if>
 <#if hasFieldErrors>
  class="checkboxErrorLabel"<#rt/>
@@ -53,7 +53,7 @@
 <#if parameters.required?default(false) && parameters.requiredPosition?default("right") != 'right'>
         <span class="required">*</span><#t/>
 </#if>
-${parameters.label?html}<#t/>
+${parameters.label?esc}<#t/>
 <#if parameters.required?default(false) && parameters.requiredPosition?default("right") == 'right'>
  <span class="required">*</span><#t/>
 </#if>
@@ -74,7 +74,7 @@ ${parameters.label?html}<#t/>
 <#if labelpos?default("") == 'left'>
 <#if parameters.label??> <label<#t/>
 <#if parameters.id??>
- for="${parameters.id?html}"<#rt/>
+ for="${parameters.id?esc}"<#rt/>
 </#if>
 <#if hasFieldErrors>
  class="checkboxErrorLabel"<#rt/>
@@ -85,7 +85,7 @@ ${parameters.label?html}<#t/>
 <#if parameters.required?default(false) && parameters.requiredPosition?default("right") != 'right'>
         <span class="required">*</span><#t/>
 </#if>
-${parameters.label?html}<#t/>
+${parameters.label?esc}<#t/>
 <#if parameters.required?default(false) && parameters.requiredPosition?default("right") == 'right'>
  <span class="required">*</span><#t/>
 </#if>
@@ -113,14 +113,14 @@ ${parameters.label?html}<#t/>
 <#if labelpos?default("") != 'top' && labelpos?default("") != 'left'>
 <#if parameters.label??> <label<#t/>
 <#if parameters.id??>
- for="${parameters.id?html}"<#rt/>
+ for="${parameters.id?esc}"<#rt/>
 </#if>
 <#if hasFieldErrors>
  class="checkboxErrorLabel"<#rt/>
 <#else>
  class="checkboxLabel"<#rt/>
 </#if>
->${parameters.label?html}</label><#rt/>
+>${parameters.label?esc}</label><#rt/>
 </#if>
 </#if>
 </#if>

@@ -19,5 +19,5 @@
  */
 -->
 <#if parameters.accesskey??>
- accesskey="${parameters.accesskey?html}" 
+ accesskey="${parameters.accesskey?esc}" 
 </#if>

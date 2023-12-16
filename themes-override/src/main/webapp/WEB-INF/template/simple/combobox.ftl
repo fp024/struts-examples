@@ -19,9 +19,9 @@
  */
 -->
 <script type="text/javascript">
-	function autoPopulate_${parameters.escapedId?html}(targetElement) {
+	function autoPopulate_${parameters.escapedId?esc}(targetElement) {
 		<#if parameters.headerKey?? && parameters.headerValue??>
-		if (targetElement.options[targetElement.selectedIndex].value == '${parameters.headerKey?html}') {
+		if (targetElement.options[targetElement.selectedIndex].value == '${parameters.headerKey?esc}') {
 			return;
 		}
 		</#if>
@@ -30,20 +30,20 @@
 		    return;
 		}
 		</#if>
-		targetElement.form.elements['${parameters.name?html}'].value=targetElement.options[targetElement.selectedIndex].value;
+		targetElement.form.elements['${parameters.name?esc}'].value=targetElement.options[targetElement.selectedIndex].value;
 	}
 </script>
 <#include "/${parameters.templateDir}/simple/text.ftl" />
 <br />
 <#if parameters.list??>
-<select onChange="autoPopulate_${parameters.escapedId?html}(this);"<#rt/>
+<select onChange="autoPopulate_${parameters.escapedId?esc}(this);"<#rt/>
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/css.ftl" />
     <#if parameters.disabled?default(false)>
  disabled="disabled"<#rt/>
     </#if>
 >
 	<#if (parameters.headerKey?? && parameters.headerValue??)>
-		<option value="${parameters.headerKey?html}">${parameters.headerValue?html}</option>
+		<option value="${parameters.headerKey?esc}">${parameters.headerValue?esc}</option>
 	</#if>
 	<#if parameters.emptyOption?default(false)>
 	    <option value=""></option>
@@ -80,21 +80,21 @@
           <#assign itemTitle = ''/>
         </#if>
     </#if>
-    <option value="${tmpListKey?html}"<#rt/>
+    <option value="${tmpListKey?esc}"<#rt/>
         <#if (parameters.nameValue == tmpListKey)>
  selected="selected"<#rt/>
         </#if>
         <#if itemCssClass?if_exists != "">
- class="${itemCssClass?html}"<#rt/>
+ class="${itemCssClass?esc}"<#rt/>
         </#if>
         <#if itemCssStyle?if_exists != "">
- style="${itemCssStyle?html}"<#rt/>
+ style="${itemCssStyle?esc}"<#rt/>
         </#if>
         <#if itemTitle?if_exists != "">
- title="${itemTitle?html}"<#rt/>
+ title="${itemTitle?esc}"<#rt/>
         </#if>
     ><#t/>
-            ${tmpListValue?html}<#t/>
+            ${tmpListValue?esc}<#t/>
     </option><#lt/>
     </@s.iterator>
 </select>

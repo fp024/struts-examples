@@ -19,16 +19,16 @@
  */
 -->
 <input<#rt/>
- type="${parameters.type?default("text")?html}"<#rt/>
- name="${parameters.name?default("")?html}"<#rt/>
+ type="${parameters.type?default("text")?esc}"<#rt/>
+ name="${parameters.name?default("")?esc}"<#rt/>
 <#if parameters.get("size")??>
- size="${parameters.get("size")?html}"<#rt/>
+ size="${parameters.get("size")?esc}"<#rt/>
 </#if>
 <#if parameters.maxlength??>
- maxlength="${parameters.maxlength?html}"<#rt/>
+ maxlength="${parameters.maxlength?esc}"<#rt/>
 </#if>
 <#if parameters.nameValue??>
- value="${parameters.nameValue?html}"<#rt/>
+ value="${parameters.nameValue?esc}"<#rt/>
 </#if>
 <#if parameters.disabled?default(false)>
  disabled="disabled"<#rt/>
@@ -37,14 +37,14 @@
  readonly="readonly"<#rt/>
 </#if>
 <#if parameters.tabindex??>
- tabindex="${parameters.tabindex?html}"<#rt/>
+ tabindex="${parameters.tabindex?esc}"<#rt/>
 </#if>
 <#if parameters.id??>
- id="${parameters.id?html}"<#rt/>
+ id="${parameters.id?esc}"<#rt/>
 </#if>
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/css.ftl" />
 <#if parameters.title??>
- title="${parameters.title?html}"<#rt/>
+ title="${parameters.title?esc}"<#rt/>
 </#if>
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/scripting-events.ftl" />
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/common-attributes.ftl" />

@@ -31,7 +31,7 @@
 
 
 <input type="text"<#rt/>
- name="${parameters.name?default("")?html}_input"<#rt/>
+ name="${parameters.name?default("")?esc}_input"<#rt/>
 <#if parameters.disabled?default(false)>
  disabled="disabled"<#rt/>
 </#if>
@@ -39,19 +39,19 @@
  readonly="readonly"<#rt/>
 </#if>
 <#if parameters.tabindex??>
- tabindex="${parameters.tabindex?html}"<#rt/>
+ tabindex="${parameters.tabindex?esc}"<#rt/>
 </#if>
 <#if parameters.id??>
- id="${parameters.id?html}_input"<#rt/>
+ id="${parameters.id?esc}_input"<#rt/>
 </#if>
 <#if parameters.cssClass??>
- class="${parameters.cssClass?html}"<#rt/>
+ class="${parameters.cssClass?esc}"<#rt/>
 </#if>
 <#if parameters.cssStyle??>
- style="${parameters.cssStyle?html}"<#rt/>
+ style="${parameters.cssStyle?esc}"<#rt/>
 </#if>
 <#if parameters.title??>
- title="${parameters.title?html}"<#rt/>
+ title="${parameters.title?esc}"<#rt/>
 </#if>
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/scripting-events.ftl" />
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/common-attributes.ftl" />
@@ -60,35 +60,35 @@
 
 </td>
 <td valign="middle" align="center">
-	<#assign addLabel=parameters.addLabel?default("->")?html /><#t/>
+	<#assign addLabel=parameters.addLabel?default("->")?esc /><#t/>
 	<input type="button"
 		<#if parameters.buttonCssClass??><#t/>
-		 class="${parameters.buttonCssClass?html}"
+		 class="${parameters.buttonCssClass?esc}"
 		</#if><#t/>
 		<#if parameters.buttonCssStyle??>
-		 style="${parameters.buttonCssStyle?html}"
+		 style="${parameters.buttonCssStyle?esc}"
 		</#if><#t/>
-		 value="${addLabel}" onclick="addOption(document.getElementById('${parameters.id?html}_input'), document.getElementById('${parameters.id?html}'))" /><br /><br />
+		 value="${addLabel}" onclick="addOption(document.getElementById('${parameters.id?esc}_input'), document.getElementById('${parameters.id?esc}'))" /><br /><br />
 	<#t/>
-	<#assign removeLabel=parameters.removeLabel?default("<-")?html /><#t/>
+	<#assign removeLabel=parameters.removeLabel?default("<-")?esc /><#t/>
 	<input type="button"
   		<#if parameters.buttonCssClass??><#t/>
-		 class="${parameters.buttonCssClass?html}"
+		 class="${parameters.buttonCssClass?esc}"
 		</#if><#t/>
 		<#if parameters.buttonCssStyle??>
-		 style="${parameters.buttonCssStyle?html}"
+		 style="${parameters.buttonCssStyle?esc}"
 		</#if><#t/>
-		 value="${removeLabel}" onclick="removeOptions(document.getElementById('${parameters.id?html}'))" /><br /><br />
+		 value="${removeLabel}" onclick="removeOptions(document.getElementById('${parameters.id?esc}'))" /><br /><br />
 	<#t/>
-	<#assign removeAllLabel=parameters.removeAllLabel?default("<<--")?html /><#t/>
+	<#assign removeAllLabel=parameters.removeAllLabel?default("<<--")?esc /><#t/>
 	<input type="button"
 	    		<#if parameters.buttonCssClass??><#t/>
-		 class="${parameters.buttonCssClass?html}"
+		 class="${parameters.buttonCssClass?esc}"
 		</#if><#t/>
 		<#if parameters.buttonCssStyle??>
-		 style="${parameters.buttonCssStyle?html}"
+		 style="${parameters.buttonCssStyle?esc}"
 		</#if><#t/>
-		 value="${removeAllLabel}" onclick="removeAllOptions(document.getElementById('${parameters.id?html}'))" /><br /><br />
+		 value="${removeAllLabel}" onclick="removeAllOptions(document.getElementById('${parameters.id?esc}'))" /><br /><br />
 </td>
 <td>
 <#if parameters.rightTitle??><#t/>
@@ -103,7 +103,7 @@
 	onclick="moveOptionDown(document.getElementById('${parameters.id}'), 'key', '');"
 </#if>
 <#if parameters.downLabel??>
-	value="${parameters.downLabel?html}"
+	value="${parameters.downLabel?esc}"
 </#if>
 />
 <input type="button" 
@@ -113,7 +113,7 @@
 	onclick="moveOptionUp(document.getElementById('${parameters.id}'), 'key', '');"
 </#if>
 <#if parameters.upLabel??>
-	value="${parameters.upLabel?html}"
+	value="${parameters.upLabel?esc}"
 </#if>
 />
 </#if>

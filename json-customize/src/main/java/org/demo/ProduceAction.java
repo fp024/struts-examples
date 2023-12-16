@@ -25,6 +25,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * <code>Set welcome message.</code>
@@ -38,7 +39,7 @@ public class ProduceAction extends ActionSupport {
 
         user.setName("William Shakespeare");
 
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH);
         user.setBirthday(formatter.parse("26-Apr-1564"));
 
         List<Phone> phoneNumbers = new ArrayList<Phone>();

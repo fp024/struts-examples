@@ -33,7 +33,7 @@
           <#t/>,'styleClass', '${parameters.tooltipCssClass?default("StrutsTTClassic")}'<#t/>
           <#t/>)" />
       <#else>
-      	title="${parameters.tooltip?html}"
-      	alt="${parameters.tooltip?html}" />
+      	title="${parameters.tooltip?esc}"
+      	alt="${parameters.tooltip?esc}" />
      </#if>
 </#if><#t/>

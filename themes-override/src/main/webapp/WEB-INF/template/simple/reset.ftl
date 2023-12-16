@@ -21,16 +21,16 @@
 <#if parameters.type?? && parameters.type=="button">
 <button type="reset"<#rt/>
 <#if parameters.name??>
- name="${parameters.name?html}"<#rt/>
+ name="${parameters.name?esc}"<#rt/>
 </#if>
 <#if parameters.nameValue??>
  value="<@s.property value="parameters.nameValue"/>"<#rt/>
 </#if>
 <#if parameters.cssClass??>
- class="${parameters.cssClass?html}"<#rt/>
+ class="${parameters.cssClass?esc}"<#rt/>
 </#if>
 <#if parameters.cssStyle??>
- style="${parameters.cssStyle?html}"<#rt/>
+ style="${parameters.cssStyle?esc}"<#rt/>
 </#if>
 <#if parameters.disabled?default(false)>
  disabled="disabled"<#rt/>
@@ -41,28 +41,28 @@
 ><#if parameters.src??>
 <img<#rt/>
 <#if parameters.label??>
- alt="${parameters.label?html}"<#rt/>
+ alt="${parameters.label?esc}"<#rt/>
 </#if>
 <#if parameters.src??>
- src="${parameters.src?html}"<#rt/>
+ src="${parameters.src?esc}"<#rt/>
 </#if>
 /><#else><#if parameters.label??><@s.property value="parameters.label"/><#rt/></#if></#if></button>
 <#else>
 <input type="reset"<#rt/>
 <#if parameters.name??>
- name="${parameters.name?html}"<#rt/>
+ name="${parameters.name?esc}"<#rt/>
 </#if>
 <#if parameters.nameValue??>
  value="<@s.property value="parameters.nameValue"/>"<#rt/>
 </#if>
 <#if parameters.cssClass??>
- class="${parameters.cssClass?html}"<#rt/>
+ class="${parameters.cssClass?esc}"<#rt/>
 </#if>
 <#if parameters.cssStyle??>
- style="${parameters.cssStyle?html}"<#rt/>
+ style="${parameters.cssStyle?esc}"<#rt/>
 </#if>
 <#if parameters.title??>
- title="${parameters.title?html}"<#rt/>
+ title="${parameters.title?esc}"<#rt/>
 </#if>
 <#if parameters.disabled?default(false)>
  disabled="disabled"<#rt/>

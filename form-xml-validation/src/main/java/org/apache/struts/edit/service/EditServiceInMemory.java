@@ -25,7 +25,7 @@ public class EditServiceInMemory implements EditService {
         person.setOver21(true);
         person.setCarModels(carModels);
         person.setPhoneNumber("123-456-9999");
-        person.setAge(new Integer(30));
+        person.setAge(30);
 
     }
 

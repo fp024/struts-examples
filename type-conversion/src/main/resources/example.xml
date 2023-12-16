@@ -15,7 +15,7 @@
             <result>/WEB-INF/example/Theme.jsp</result>
         </action>
 
-        <action name="Number" class="org.apache.struts.example.IndexAction">
+        <action name="Number" class="org.apache.struts.example.NumberAction">
             <result name="input">/WEB-INF/example/Number.jsp</result>
         </action>
 

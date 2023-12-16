@@ -54,11 +54,11 @@
         </#if>
     </#if>
     <#assign itemKeyStr=itemKey.toString() />
-<input type="checkbox" name="${parameters.name?html}" value="${itemKeyStr?html}"<#rt/>
+<input type="checkbox" name="${parameters.name?esc}" value="${itemKeyStr?esc}"<#rt/>
     <#if parameters.id??>
-       id="${parameters.id?html}-${itemCount}"<#rt/>
+       id="${parameters.id?esc}-${itemCount}"<#rt/>
     <#else>
-       id="${parameters.name?html}-${itemCount}"<#rt/>
+       id="${parameters.name?esc}-${itemCount}"<#rt/>
     </#if>
     <#if tag.contains(parameters.nameValue, itemKey)>
        checked="checked"<#rt/>
@@ -67,24 +67,24 @@
        disabled="disabled"<#rt/>
     </#if>
     <#if itemCssClass?if_exists != "">
-     class="${itemCssClass?html}"<#rt/>
+     class="${itemCssClass?esc}"<#rt/>
     <#else>
         <#if parameters.cssClass??>
-     class="${parameters.cssClass?html}"<#rt/>
+     class="${parameters.cssClass?esc}"<#rt/>
         </#if>
     </#if>
     <#if itemCssStyle?if_exists != "">
-     style="${itemCssStyle?html}"<#rt/>
+     style="${itemCssStyle?esc}"<#rt/>
     <#else>
         <#if parameters.cssStyle??>
-     style="${parameters.cssStyle?html}"<#rt/>
+     style="${parameters.cssStyle?esc}"<#rt/>
         </#if>
     </#if>
     <#if itemTitle?if_exists != "">
-     title="${itemTitle?html}"<#rt/>
+     title="${itemTitle?esc}"<#rt/>
     <#else>
         <#if parameters.title??>
-     title="${parameters.title?html}"<#rt/>
+     title="${parameters.title?esc}"<#rt/>
         </#if>
     </#if>
     <#include "/${parameters.templateDir}/${parameters.expandTheme}/css.ftl" />
@@ -94,16 +94,16 @@
         />
 <label<#rt/> 
     <#if parameters.id??>
-        for="${parameters.id?html}-${itemCount}"<#rt/>
+        for="${parameters.id?esc}-${itemCount}"<#rt/>
     <#else>
-        for="${parameters.name?html}-${itemCount}"<#rt/>
+        for="${parameters.name?esc}-${itemCount}"<#rt/>
     </#if>
-        class="checkboxLabel">${itemValue?html}</label>
+        class="checkboxLabel">${itemValue?esc}</label>
 </@s.iterator>
     <#else>
     &nbsp;
 </#if>
-<input type="hidden" id="__multiselect_${parameters.id?html}" name="__multiselect_${parameters.name?html}"
+<input type="hidden" id="__multiselect_${parameters.id?esc}" name="__multiselect_${parameters.name?esc}"
        value=""<#rt/>
 <#if parameters.disabled?default(false)>
        disabled="disabled"<#rt/>

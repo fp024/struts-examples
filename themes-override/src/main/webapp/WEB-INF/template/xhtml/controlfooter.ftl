@@ -27,7 +27,7 @@ ${parameters.after?if_exists}<#t/>
 <#list fieldErrors[parameters.name] as error>
 <tr errorFor="${parameters.id}">
     <td align="center" valign="top" colspan="2"><#rt/>
-        <span class="errorMessage">${error?html}</span><#t/>
+        <span class="errorMessage">${error?esc}</span><#t/>
     </td><#lt/>
 </tr>
 </#list>

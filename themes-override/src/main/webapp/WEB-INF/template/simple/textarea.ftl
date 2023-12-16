@@ -19,11 +19,11 @@
  */
 -->
 <textarea<#rt/>
- name="${parameters.name?default("")?html}"<#rt/>
- cols="${parameters.cols?default("")?html}"<#rt/>
- rows="${parameters.rows?default("")?html}"<#rt/>
+ name="${parameters.name?default("")?esc}"<#rt/>
+ cols="${parameters.cols?default("")?esc}"<#rt/>
+ rows="${parameters.rows?default("")?esc}"<#rt/>
 <#if parameters.wrap??>
- wrap="${parameters.wrap?html}"<#rt/>
+ wrap="${parameters.wrap?esc}"<#rt/>
 </#if>
 <#if parameters.disabled?default(false)>
  disabled="disabled"<#rt/>
@@ -32,14 +32,14 @@
  readonly="readonly"<#rt/>
 </#if>
 <#if parameters.tabindex??>
- tabindex="${parameters.tabindex?html}"<#rt/>
+ tabindex="${parameters.tabindex?esc}"<#rt/>
 </#if>
 <#if parameters.id??>
- id="${parameters.id?html}"<#rt/>
+ id="${parameters.id?esc}"<#rt/>
 </#if>
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/css.ftl" />
 <#if parameters.title??>
- title="${parameters.title?html}"<#rt/>
+ title="${parameters.title?esc}"<#rt/>
 </#if>
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/scripting-events.ftl" />
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/common-attributes.ftl" />

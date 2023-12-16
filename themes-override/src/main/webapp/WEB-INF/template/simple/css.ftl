@@ -20,14 +20,14 @@
 -->
 <#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors[parameters.name]??/>
 <#if parameters.cssClass?? && !(hasFieldErrors && parameters.cssErrorClass??)>
- class="${parameters.cssClass?html}"<#rt/>
+ class="${parameters.cssClass?esc}"<#rt/>
 <#elseif parameters.cssClass?? && (hasFieldErrors && parameters.cssErrorClass??)>
- class="${parameters.cssClass?html} ${parameters.cssErrorClass?html}"<#rt/>
+ class="${parameters.cssClass?esc} ${parameters.cssErrorClass?esc}"<#rt/>
 <#elseif !(parameters.cssClass??) && (hasFieldErrors && parameters.cssErrorClass??)>
- class="${parameters.cssErrorClass?html}"<#rt/>
+ class="${parameters.cssErrorClass?esc}"<#rt/>
 </#if>
 <#if parameters.cssStyle?? && !(hasFieldErrors && (parameters.cssErrorStyle?? || parameters.cssErrorClass??))>
- style="${parameters.cssStyle?html}"<#rt/>
+ style="${parameters.cssStyle?esc}"<#rt/>
 <#elseif hasFieldErrors && parameters.cssErrorStyle??>
- style="${parameters.cssErrorStyle?html}"<#rt/>
+ style="${parameters.cssErrorStyle?esc}"<#rt/>
 </#if>

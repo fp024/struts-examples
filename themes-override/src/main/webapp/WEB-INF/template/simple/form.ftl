@@ -20,6 +20,6 @@
 -->
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/form-common.ftl" />
 <#if parameters.onreset??>
- onreset="${parameters.onreset?html}"<#rt/>
+ onreset="${parameters.onreset?esc}"<#rt/>
 </#if>
 >

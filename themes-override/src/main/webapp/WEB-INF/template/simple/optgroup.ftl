@@ -36,11 +36,11 @@
 	<#assign tmpKey=stack.findValue(optGroupInternalListUiBean.parameters.listKey) />
 	<#assign tmpValue=stack.findValue(optGroupInternalListUiBean.parameters.listValue) />
 	<#assign tmpKeyStr = tmpKey.toString() />
-	<option value="${tmpKeyStr?html}"
+	<option value="${tmpKeyStr?esc}"
 	<#if tag.contains(parameters.nameValue, tmpKeyStr) == true>
 	selected="selected"
 	</#if>
-	>${tmpValue?html}
+	>${tmpValue?esc}
 	</option>
 <#assign trash=stack.pop() />
 </#list>
